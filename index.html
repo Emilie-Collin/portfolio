@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio — Projects</title>
+<style>
+  :root{
+    --bg: #0F2038;
+    --bg-line: rgba(255,255,255,0.06);
+    --surface: #142A4A;
+    --ink: #EDEFF3;
+    --muted: #A7B3C6;
+    --accent: #D69A5C;
+    --accent-soft: rgba(214,154,92,0.14);
+    --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background:
+      linear-gradient(var(--bg-line) 1px, transparent 1px) 0 0/100% 42px,
+      var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--accent); }
+
+  .wrap{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  header.hero{
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--bg-line);
+  }
+
+  header.hero h1{
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin: 0 0 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  header.hero p{
+    color: var(--muted);
+    font-size: 1.15rem;
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  main{ padding: 56px 0 100px; }
+
+  .project{
+    position: relative;
+    padding: 8px 0 8px 28px;
+    border-left: 2px solid var(--accent);
+    margin-bottom: 72px;
+  }
+
+  .project h2{
+    font-size: 1.6rem;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+
+  .meta{
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--accent);
+    margin: 0 0 22px;
+  }
+
+  .meta span{
+    color: var(--muted);
+  }
+
+  .project p{
+    color: var(--ink);
+    margin: 0 0 16px;
+    max-width: 68ch;
+  }
+
+  .stack{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 4px 0 26px;
+  }
+
+  .stack span{
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--bg-line);
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  .media{
+    margin-top: 24px;
+    background: var(--surface);
+    border: 1px solid var(--bg-line);
+    border-radius: 4px;
+    padding: 14px;
+  }
+
+  .media video{
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    background: #000;
+  }
+
+  .media figcaption{
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  .placeholder{
+    border: 1px dashed var(--bg-line);
+    border-radius: 4px;
+    padding: 28px;
+    text-align: center;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.82rem;
+  }
+
+  footer{
+    border-top: 1px solid var(--bg-line);
+    padding: 32px 0 60px;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 560px){
+    header.hero{ padding: 64px 0 40px; }
+    .project{ padding-left: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Your Name</h1>
+    <p>A record of projects built during my studies, with the reasoning behind each one — for anyone deciding whether to bring me onto their team.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="project" id="project-c">
+    <h2>Project C</h2>
+    <p class="meta">May 2025 <span>· team of 3 · 3 weeks</span></p>
+
+    <p>The goal was to build a graphical interface by writing a software library from scratch in C. We started from a short documentation describing the steps ahead and a couple of given functions — one to open a window, another returning a pointer to the pixel at coordinates (0, 0) of a surface.</p>
+
+    <p>From those two building blocks, we wrote our own drawing functions: a line, several lines, a polygon, a curve, and text. Clipping needed special care here — a window dragged outside the screen, or two windows overlapping, both had to render correctly rather than crash or corrupt memory.</p>
+
+    <p>Once drawing worked, we moved to interaction: detecting clicks on a button, closing a window. The library was solid enough by the end to run full test games, including a working puzzle.</p>
+
+    <div class="stack">
+      <span>C</span>
+      <span>Low-level graphics</span>
+      <span>Memory management</span>
+      <span>Team of 3</span>
+    </div>
+
+    <figure class="media">
+      <div class="placeholder">Video coming soon — assets/videos/project-c-demo.mp4</div>
+      <!-- Once the file is in place, replace the div above with:
+      <video controls src="assets/videos/project-c-demo.mp4"></video>
+      -->
+      <figcaption>Demo — the puzzle game running on the custom library</figcaption>
+    </figure>
+  </section>
+
+  <section class="project" id="project-oad">
+    <h2>Object Analysis and Design</h2>
+    <p class="meta">May 2026 <span>· team of 3 · 15h in class + 20h+ outside</span></p>
+
+    <p>The brief was intentionally vague: design a game, playable in a terminal or with a simple editor, and deliver documentation explaining how it was conceived. The real point of the exercise was to conceptualize a piece of software end to end using diagrams, before writing a single line of code.</p>
+
+    <p>We started with specifications to fix the gist of the game, then wrote an analysis and a design document to pin down what the software actually needed to do. Only then did we move to implementation, coding in Java with LibGDX to handle game interactions, and sourcing free assets for the visuals.</p>
+
+    <p>The class diagram and the codebase kept feeding back into each other — details we'd missed on paper surfaced once we started building, sending us back to revise the design. We closed the project with a user manual and a self-assessment of the final product.</p>
+
+    <div class="stack">
+      <span>Java</span>
+      <span>LibGDX</span>
+      <span>UML / class diagrams</span>
+      <span>Software design</span>
+      <span>Team of 3</span>
+    </div>
+
+    <figure class="media">
+      <div class="placeholder">Video coming soon — assets/videos/project-oad-demo.mp4</div>
+      <!-- Once the file is in place, replace the div above with:
+      <video controls src="assets/videos/project-oad-demo.mp4"></video>
+      -->
+      <figcaption>Demo — a playthrough of the finished game</figcaption>
+    </figure>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>Built to be hosted on GitHub Pages.</p>
+</footer>
+
+</body>
+</html>
