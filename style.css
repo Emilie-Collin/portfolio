@@ -1,0 +1,220 @@
+:root{
+  --bg: #F7F4EE;
+  --surface: #FFFFFF;
+  --ink: #23262B;
+  --muted: #6B7078;
+  --line: #E4DFD5;
+
+  --c-c: #E4572E;
+  --c-boids: #1B998B;
+  --c-acol: #6C4AB6;
+  --c-3d: #D69A2D;
+  --c-internship: #2274A5;
+
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+a{ color: inherit; text-decoration: none; }
+
+code{
+  font-family: "SFMono-Regular", Consolas, monospace;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+
+/* Hero */
+header.hero{
+  padding: 88px 0 56px;
+}
+
+header.hero h1{
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+header.hero p{
+  color: var(--muted);
+  font-size: 1.15rem;
+  max-width: 56ch;
+  margin: 0;
+}
+
+/* Timeline */
+nav.timeline{
+  padding: 8px 0 56px;
+}
+
+nav.timeline ol{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid var(--line);
+}
+
+.tl-item{
+  position: relative;
+  padding: 9px 0 9px 24px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.tl-item .dot{
+  position: absolute;
+  left: -7px;
+  top: 15px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--line);
+  border: 2px solid var(--bg);
+}
+
+.tl-item a{
+  display: block;
+}
+
+.tl-item a:hover .tl-text{
+  color: var(--ink);
+}
+
+.tl-item.bold .tl-text{
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.tl-item.accent-c .dot{ background: var(--c-c); }
+.tl-item.accent-boids .dot{ background: var(--c-boids); }
+.tl-item.accent-acol .dot{ background: var(--c-acol); }
+.tl-item.accent-3d .dot{ background: var(--c-3d); }
+.tl-item.accent-internship .dot{ background: var(--c-internship); }
+
+.tl-item time{
+  font-size: 0.85em;
+  color: var(--muted);
+  margin-left: 8px;
+}
+
+/* Projects */
+main{ padding: 16px 0 80px; }
+
+.project{
+  position: relative;
+  padding: 6px 0 6px 26px;
+  border-left: 4px solid var(--line);
+  margin-bottom: 76px;
+}
+
+.project.accent-c{ border-color: var(--c-c); }
+.project.accent-boids{ border-color: var(--c-boids); }
+.project.accent-acol{ border-color: var(--c-acol); }
+.project.accent-3d{ border-color: var(--c-3d); }
+.project.accent-internship{ border-color: var(--c-internship); }
+
+.project h2{
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.project .meta{
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.stack{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.stack span{
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 11px;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.accent-c .stack span:nth-child(1){ border-color: var(--c-c); color: var(--c-c); }
+.accent-boids .stack span:nth-child(1){ border-color: var(--c-boids); color: var(--c-boids); }
+.accent-acol .stack span:nth-child(1){ border-color: var(--c-acol); color: var(--c-acol); }
+.accent-3d .stack span:nth-child(1){ border-color: var(--c-3d); color: var(--c-3d); }
+.accent-internship .stack span:nth-child(1){ border-color: var(--c-internship); color: var(--c-internship); }
+
+.project p{
+  max-width: 68ch;
+  margin: 0 0 16px;
+}
+
+/* Media */
+.media-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.media{
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.media video,
+.media img{
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  background: #000;
+}
+
+.media img{ background: var(--bg); object-fit: cover; }
+
+.media figcaption{
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* Footer */
+footer{
+  border-top: 1px solid var(--line);
+  padding: 28px 0 60px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 560px){
+  header.hero{ padding: 60px 0 40px; }
+  .project{ padding-left: 16px; }
+}
