@@ -59,11 +59,11 @@
 
     <div class="media-stack">
       <figure class="media">
-        <a href="assets/images/internship-voc.jpeg" target="_blank" rel="noopener"><img src="assets/images/internship-voc.jpeg" alt="Screenshot of the VOC website"></a>
+        <img class="zoomable" src="assets/images/internship-voc.jpeg" alt="Screenshot of the VOC website">
         <figcaption>The VOC website</figcaption>
       </figure>
       <figure class="media">
-        <a href="assets/images/internship-planning.jpg" target="_blank" rel="noopener"><img src="assets/images/internship-planning.jpg" alt="Screenshot of the scheduling feature"></a>
+        <img class="zoomable" src="assets/images/internship-planning.jpg" alt="Screenshot of the scheduling feature">
         <figcaption>The scheduling feature</figcaption>
       </figure>
     </div>
@@ -92,15 +92,15 @@
         <figcaption>A playthrough of the finished game</figcaption>
       </figure>
       <figure class="media">
-        <a href="assets/images/acol-class-diagram.png" target="_blank" rel="noopener"><img src="assets/images/acol-class-diagram.png" alt="Class diagram"></a>
+        <img class="zoomable" src="assets/images/acol-class-diagram.png" alt="Class diagram">
         <figcaption>Class diagram</figcaption>
       </figure>
       <figure class="media">
-        <a href="assets/images/acol-sequence-diagram.png" target="_blank" rel="noopener"><img src="assets/images/acol-sequence-diagram.png" alt="Sequence diagram"></a>
+        <img class="zoomable" src="assets/images/acol-sequence-diagram.png" alt="Sequence diagram">
         <figcaption>Sequence diagram</figcaption>
       </figure>
       <figure class="media">
-        <a href="assets/images/acol-use-case-diagram.png" target="_blank" rel="noopener"><img src="assets/images/acol-use-case-diagram.png" alt="Use case diagram"></a>
+        <img class="zoomable" src="assets/images/acol-use-case-diagram.png" alt="Use case diagram">
         <figcaption>Use case diagram</figcaption>
       </figure>
     </div>
@@ -124,7 +124,7 @@
 
     <div class="media-stack">
       <figure class="media">
-        <a href="assets/images/graphic3d-poster.png" target="_blank" rel="noopener"><img src="assets/images/graphic3d-poster.png" alt="Poster summarizing the planar reflection project"></a>
+        <img class="zoomable" src="assets/images/graphic3d-poster.png" alt="Poster summarizing the planar reflection project">
         <figcaption>Project poster</figcaption>
       </figure>
     </div>
@@ -151,7 +151,7 @@
         <figcaption>Boids reacting to cohesion, alignment and separation</figcaption>
       </figure>
       <figure class="media">
-        <a href="assets/images/poo-boids.png" target="_blank" rel="noopener"><img src="assets/images/poo-boids.png" alt="Photo related to the boids project"></a>
+        <img class="zoomable" src="assets/images/poo-boids.png" alt="Photo related to the boids project">
         <figcaption>Boids project</figcaption>
       </figure>
     </div>
@@ -191,6 +191,51 @@
 <footer class="wrap">
   <p>Built to be hosted on GitHub Pages.</p>
 </footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.getElementById('lightbox-close');
+
+  function openLightbox(src, alt){
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightboxImg.classList.remove('zoomed');
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('active');
+    lightboxImg.classList.remove('zoomed');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.media img.zoomable').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+
+  lightboxImg.addEventListener('click', (e) => {
+    e.stopPropagation();
+    lightboxImg.classList.toggle('zoomed');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 
 </body>
 </html>
