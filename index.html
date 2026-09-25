@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
@@ -20,82 +21,50 @@
 
 <nav class="timeline wrap" aria-label="Project timeline">
   <ol>
-    <li class="tl-item bold accent-c"><a href="#project-c"><span class="dot"></span><span class="tl-text">Project C <time>May 2025</time></span></a></li>
-    <li class="tl-item"><span class="dot"></span><span class="tl-text">Operating Systems Design Project <time>Sep-Nov 2025</time></span></li>
-    <li class="tl-item"><span class="dot"></span><span class="tl-text">Operating Systems and Concurrent Programming <time>Sep-Nov 2025</time></span></li>
-    <li class="tl-item accent-boids"><a href="#boids"><span class="dot"></span><span class="tl-text">Object-Oriented Programming - Boids <time>Nov 2025</time></span></a></li>
-    <li class="tl-item"><span class="dot"></span><span class="tl-text">Data Base Project <time>Nov 2025</time></span></li>
-    <li class="tl-item bold"><span class="dot"></span><span class="tl-text">Projet GL <time>Dec 2025 - Jan 2026</time></span></li>
-    <li class="tl-item"><span class="dot"></span><span class="tl-text">Building Web Applications <time>Feb-Apr 2026</time></span></li>
-    <li class="tl-item accent-3d"><a href="#graphic-3d"><span class="dot"></span><span class="tl-text">3D Graphic Project <time>Apr 2026</time></span></a></li>
-    <li class="tl-item accent-acol"><a href="#acol"><span class="dot"></span><span class="tl-text">Object Analysis and Design <time>May 2026</time></span></a></li>
     <li class="tl-item bold accent-internship"><a href="#internship"><span class="dot"></span><span class="tl-text">Internship - Dassault Systemes <time>Jun-Jul 2026</time></span></a></li>
+    <li class="tl-item accent-acol"><a href="#acol"><span class="dot"></span><span class="tl-text">Object Analysis and Design <time>May 2026</time></span></a></li>
+    <li class="tl-item accent-3d"><a href="#graphic-3d"><span class="dot"></span><span class="tl-text">3D Graphic Project <time>Apr 2026</time></span></a></li>
+    <li class="tl-item"><span class="dot"></span><span class="tl-text">Building Web Applications <time>Feb-Apr 2026</time></span></li>
+    <li class="tl-item bold"><span class="dot"></span><span class="tl-text">Projet GL <time>Dec 2025 - Jan 2026</time></span></li>
+    <li class="tl-item"><span class="dot"></span><span class="tl-text">Data Base Project <time>Nov 2025</time></span></li>
+    <li class="tl-item accent-boids"><a href="#boids"><span class="dot"></span><span class="tl-text">Object-Oriented Programming - Boids <time>Nov 2025</time></span></a></li>
+    <li class="tl-item"><span class="dot"></span><span class="tl-text">Operating Systems and Concurrent Programming <time>Sep-Nov 2025</time></span></li>
+    <li class="tl-item"><span class="dot"></span><span class="tl-text">Operating Systems Design Project <time>Sep-Nov 2025</time></span></li>
+    <li class="tl-item bold accent-c"><a href="#project-c"><span class="dot"></span><span class="tl-text">Project C <time>May 2025</time></span></a></li>
   </ol>
 </nav>
 
 <main class="wrap">
 
-  <section class="project accent-c" id="project-c">
-    <h2>Project C</h2>
-    <p class="meta">May 2025 <span>- team of 3 - 3 weeks</span></p>
+  <section class="project accent-internship" id="internship">
+    <h2>2 Months Internship - Dassault Systemes</h2>
+    <p class="meta">June - July 2026 <span>- Cybersecurity IS team</span></p>
     <div class="stack">
-      <span>C</span><span>GitLab</span>
+      <span>Python</span><span>Library datetime</span><span>Library SQLAlchemy</span><span>SQL</span><span>HTML</span><span>Docker</span><span>Docker Compose</span><span>WSL</span><span>GitLab</span>
     </div>
 
-    <p>The goal was to build a graphical interface by writing a software library from scratch in C. We started from a short documentation describing the steps ahead and a couple of given functions - one to open a window, another returning a pointer to the pixel at coordinates (0, 0) of a surface.</p>
+    <p>In summer 2026, I joined the cybersecurity IS team of Dassault Systèmes for 2 months. I was assigned to the development of a new version of the team's reference website, the Vulnerability Operation Center (VOC). The VOC used to store the retrieved data in a cache, but I was required to change it to a database so that the database would become the sole source of truth. This way, it would also enable future improvements of the VOC.</p>
 
-    <p>From those two building blocks, we wrote our own drawing functions: a line, several lines, a polygon, a curve, and text. Clipping needed special care here - a window dragged outside the screen, or two windows overlapping, both had to render correctly rather than crash or corrupt memory.</p>
+    <p>To get more into details, I carried out the following steps:</p>
+    <ul>
+      <li>Connection of the database with SQLAlchemy and retrieval of the data stored inside;</li>
+      <li>Connection of the database and the VOC: assuming a populated database, the task was to build the cache using the information contained within the database;</li>
+      <li>Connection of the database to various external APIs to populate the database;</li>
+      <li>Management of database updates, whether it be inserting, modifying, or deleting information;</li>
+      <li>Preparation of database backups;</li>
+      <li>Deletion of the cache.</li>
+    </ul>
 
-    <p>Once drawing worked, we moved to interaction: detecting clicks on a button, closing a window. The library was solid enough by the end to run full test games, including a working puzzle.</p>
+    <p>Since I finished the subject of my internship earlier than expected, I also developed a new feature for the VOC: a schedule. It was a necessary tool for my team as Dassault Systèmes' cybersecurity teams were currently going through a reorganisation, so my team was bound to grow in size. Here is how it works: the user enters the number of person-days required and a timeframe in which to look for, and the feature returns available pentesters along with the corresponding dates.</p>
 
-    <div class="media-grid">
+    <div class="media-stack">
       <figure class="media">
-        <video controls src="assets/videos/c-frame.webm"></video>
-        <figcaption>The library handling windows, drawing and clipping</figcaption>
+        <a href="assets/images/internship-voc.jpeg" target="_blank" rel="noopener"><img src="assets/images/internship-voc.jpeg" alt="Screenshot of the VOC website"></a>
+        <figcaption>The VOC website</figcaption>
       </figure>
       <figure class="media">
-        <video controls src="assets/videos/c-puzzle.mp4"></video>
-        <figcaption>The puzzle game built on top of the library</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="project accent-boids" id="boids">
-    <h2>Object-Oriented Programming - Boids</h2>
-    <p class="meta">November 2025 <span>- team of 2 - 10h+ outside class</span></p>
-    <div class="stack">
-      <span>Java</span><span>GitLab</span>
-    </div>
-
-    <p>This project studied systems that simulate the movement of agents in swarms. I focused on boids: an agent's behavior depends on the position and orientation of the agents around it, meaning those close enough and within its field of view. The model rests on three rules - cohesion, an agent moves toward the average position of its neighbors; alignment, it tends to move in the same direction as them; and separation, agents that get too close repel each other to avoid collisions.</p>
-
-    <p>Our implementation used a class <code>Agents</code>, holding lists of each agent's position and speed, and a class <code>Boids</code> inheriting from it, plus a <code>BoidsSimulator</code> class handling the drawing. The <code>Boids</code> class defines a whole group and predicts each boid's next position by summing the forces applied to it, which meant keeping an up-to-date list of neighbors for every boid at all times.</p>
-
-    <div class="media-grid">
-      <figure class="media">
-        <video controls src="assets/videos/poo-boids.mp4"></video>
-        <figcaption>Boids reacting to cohesion, alignment and separation</figcaption>
-      </figure>
-      <figure class="media">
-        <img src="assets/images/poo-boids.png" alt="Class diagram of the boids simulation">
-        <figcaption>Class structure of the simulation</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="project accent-3d" id="graphic-3d">
-    <h2>3D Graphic Project</h2>
-    <p class="meta">April 2026 <span>- team of 3 - 12h in class + 10h+ outside class</span></p>
-    <div class="stack">
-      <span>Python</span><span>GitLab</span>
-    </div>
-
-    <p>The goal was to improve the rendering pipeline seen in class practicals. We chose to implement planar reflection, which produces a mirror image of a scene on a single plane. Our method was to create a virtual camera symmetrical to the real one relative to the reflecting surface, render the scene from that camera, clip the view to keep only the part actually reflected by the mirror, render the scene again at the mirror's position, and finally render the rest of the scene.</p>
-
-    <div class="media-grid">
-      <figure class="media">
-        <img src="assets/images/graphic3d-poster.png" alt="Poster summarizing the planar reflection project">
-        <figcaption>Project poster</figcaption>
+        <a href="assets/images/internship-planning.jpg" target="_blank" rel="noopener"><img src="assets/images/internship-planning.jpg" alt="Screenshot of the scheduling feature"></a>
+        <figcaption>The scheduling feature</figcaption>
       </figure>
     </div>
   </section>
@@ -104,56 +73,115 @@
     <h2>Object Analysis and Design</h2>
     <p class="meta">May 2026 <span>- team of 3 - 30h+ outside class</span></p>
     <div class="stack">
-      <span>Java</span><span>LibGDX</span><span>GitLab</span>
+      <span>Java</span><span>Library LibGDX</span>
     </div>
 
-    <p>The brief was intentionally vague: design a game, playable in a terminal or with a simple editor, and deliver documentation explaining how it was conceived. The real point of the exercise was to conceptualize a piece of software end to end using diagrams, before writing a single line of code.</p>
+    <p>The instructions for this project were very vague: it only required to create a game, with a view in the terminal or with an editor, and to deliver documentation explaining its conceptualisation alongside it. The main purpose of this project was to conceptualize a game from start to finish by using diagrams rather than heading straight into programming.</p>
 
-    <p>We started with specifications to fix the gist of the game, then wrote an analysis and a design document to pin down what the software actually needed to do. Only then did we move to implementation, coding in Java with LibGDX to handle game interactions, and sourcing free assets for the visuals.</p>
+    <p>That's why we first wrote specifications to lay down the gist of the game, then wrote an analysis and a design document to specify our needs.</p>
 
-    <p>The class diagram and the codebase kept feeding back into each other - details we'd missed on paper surfaced once we started building, sending us back to revise the design. We closed the project with a user manual and a self-assessment of the final product.</p>
+    <p>We could then start the programming phase. We coded in Java, using the library LibGDX to handle game interactions. We also needed to look for free assets for the visual part of our game.</p>
 
-    <div class="media-grid">
+    <p>We would do a back and forth between our software class diagram and our program when we realized some details were missing.</p>
+
+    <p>Finally, we wrote a user manual and an assessment of our product.</p>
+
+    <div class="media-stack">
       <figure class="media">
         <video controls src="assets/videos/acol-demo.webm"></video>
         <figcaption>A playthrough of the finished game</figcaption>
       </figure>
       <figure class="media">
-        <img src="assets/images/acol-class-diagram.png" alt="Class diagram">
+        <a href="assets/images/acol-class-diagram.png" target="_blank" rel="noopener"><img src="assets/images/acol-class-diagram.png" alt="Class diagram"></a>
         <figcaption>Class diagram</figcaption>
       </figure>
       <figure class="media">
-        <img src="assets/images/acol-sequence-diagram.png" alt="Sequence diagram">
+        <a href="assets/images/acol-sequence-diagram.png" target="_blank" rel="noopener"><img src="assets/images/acol-sequence-diagram.png" alt="Sequence diagram"></a>
         <figcaption>Sequence diagram</figcaption>
       </figure>
       <figure class="media">
-        <img src="assets/images/acol-use-case-diagram.png" alt="Use case diagram">
+        <a href="assets/images/acol-use-case-diagram.png" target="_blank" rel="noopener"><img src="assets/images/acol-use-case-diagram.png" alt="Use case diagram"></a>
         <figcaption>Use case diagram</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="project accent-internship" id="internship">
-    <h2>2-Month Internship - Dassault Systemes</h2>
-    <p class="meta">June-July 2026 <span>- Cybersecurity IS team</span></p>
+  <section class="project accent-3d" id="graphic-3d">
+    <h2>3D Graphic Project</h2>
+    <p class="meta">April 2026 <span>- team of 3 - 12h in class + 10h+ outside class</span></p>
     <div class="stack">
-      <span>Python</span><span>SQLAlchemy</span><span>SQL</span><span>Docker</span><span>Docker Compose</span><span>WSL</span><span>HTML</span><span>GitLab</span>
+      <span>Python</span>
     </div>
 
-    <p>In summer 2026, I joined the cybersecurity IS team of Dassault Systemes for two months. I was assigned to the development of a new version of the team's reference website, the Vulnerability Operation Center (VOC). The VOC used to store retrieved data in a cache, but I was asked to move it to a database so that the database would become the sole source of truth - a change that also opens the door to future improvements of the VOC.</p>
+    <p>The purpose of this project was to improve the rendering pipeline seen in the practical works in class. We chose to implement planar reflection. They enable a mirror image of a scene to be produced on a single plane. Our methodology was the following:</p>
+    <ul>
+      <li>Creating a virtual camera symmetrical to the real camera according to the reflecting surface;</li>
+      <li>Rendering the scene from this camera;</li>
+      <li>Clipping the view to keep only the part of the scene reflected by the mirror (remove elements behind the mirror or to the sides);</li>
+      <li>Rendering the scene at the mirror's position;</li>
+      <li>Rendering the rest of the scene.</li>
+    </ul>
 
-    <p>In practice, I carried out the following steps: connecting the database with SQLAlchemy and retrieving the data stored inside it; connecting the database to the VOC so that, given a populated database, the cache could be rebuilt from it; connecting the database to various external APIs to populate it; managing database updates - inserting, modifying or deleting information; preparing database backups; and finally removing the cache.</p>
-
-    <p>Since I finished the core of my internship earlier than expected, I also built a new feature for the VOC: a scheduling tool. It was needed because Dassault Systemes' cybersecurity teams were going through a reorganization and my team was about to grow. The user enters the number of person-days required and a timeframe to search within, and the feature returns the available pentesters along with matching dates.</p>
-
-    <div class="media-grid">
+    <div class="media-stack">
       <figure class="media">
-        <img src="assets/images/internship-voc.jpeg" alt="Screenshot of the VOC website">
-        <figcaption>The VOC website</figcaption>
+        <a href="assets/images/graphic3d-poster.png" target="_blank" rel="noopener"><img src="assets/images/graphic3d-poster.png" alt="Poster summarizing the planar reflection project"></a>
+        <figcaption>Project poster</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="project accent-boids" id="boids">
+    <h2>Object-Oriented Programming - Boids</h2>
+    <p class="meta">November 2025 <span>- team of 2 - 10h+ outside class</span></p>
+    <div class="stack">
+      <span>Java</span>
+    </div>
+
+    <p>This project, done in Java, aimed to study systems that would simulate the movement of agents in swarms. In my case, I focus on boids. An agent's behavior depends on the position and orientation of surrounding agents - that is, those close enough to it and within its field of view. The basic model is based on the application of three rules:</p>
+    <ul>
+      <li>Cohesion: an agent moves towards the average position (center of mass) of its neighbors;</li>
+      <li>Alignment: an agent tends to move in the same direction as its neighbors;</li>
+      <li>Separation: agents that are too close repel each other to avoid collisions.</li>
+    </ul>
+    <p>Our implementation consisted of a class Agents, with basically ArrayLists of the positions and the speeds of each agent, a class Boids that inherited from it and a class BoidsSimulator to manage the drawing of the boids. The class Boids defines all the boids of a group, and how to predict their next position by calculating all the forces applied on it (meaning that at all times, an ArrayList of neighbors is also updated for each boid).</p>
+
+    <div class="media-stack">
+      <figure class="media">
+        <video controls src="assets/videos/poo-boids.mp4"></video>
+        <figcaption>Boids reacting to cohesion, alignment and separation</figcaption>
       </figure>
       <figure class="media">
-        <img src="assets/images/internship-planning.jpg" alt="Screenshot of the scheduling feature">
-        <figcaption>The scheduling feature</figcaption>
+        <a href="assets/images/poo-boids.png" target="_blank" rel="noopener"><img src="assets/images/poo-boids.png" alt="Photo related to the boids project"></a>
+        <figcaption>Boids project</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="project accent-c" id="project-c">
+    <h2>Project C</h2>
+    <p class="meta">May 2025 <span>- team of 3 - 3 weeks</span></p>
+    <div class="stack">
+      <span>C</span>
+    </div>
+
+    <p>A project done by groups of 3 for a duration of 3 weeks.</p>
+
+    <p>The purpose was to realize a graphical interface by implementing a software library using C language. In order to do so, we were given a documentation of ?? pages explaining the different steps of our programming, as well as some functions, notably a function to create a window, and one returning a pointer to the address of the pixel at coordinates (0, 0) of a surface.</p>
+
+    <p>From there, we could write functions to draw a line, multiple lines, a polygon, a curve and text. We needed to be careful at this point and handle the case of clipping, in case we would drag the window out of the frame, or two windows overlapping for example.</p>
+
+    <p>Afterwards, we needed to focus on interactions - clicking on a button or closing a window for instance.</p>
+
+    <p>Finally, we were able to make complex test games work, like a puzzle.</p>
+
+    <div class="media-stack">
+      <figure class="media">
+        <video controls src="assets/videos/c-frame.webm"></video>
+        <figcaption>The library handling windows, drawing and clipping</figcaption>
+      </figure>
+      <figure class="media">
+        <video controls src="assets/videos/c-puzzle.mp4"></video>
+        <figcaption>The puzzle game built on top of the library</figcaption>
       </figure>
     </div>
   </section>
