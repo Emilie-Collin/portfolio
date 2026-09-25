@@ -25,7 +25,7 @@
     <li class="tl-item accent-acol"><a href="#acol"><span class="dot"></span><span class="tl-text">Object Analysis and Design <time>May 2026</time></span></a></li>
     <li class="tl-item accent-3d"><a href="#graphic-3d"><span class="dot"></span><span class="tl-text">3D Graphic Project <time>Apr 2026</time></span></a></li>
     <li class="tl-item"><span class="dot"></span><span class="tl-text">Building Web Applications <time>Feb-Apr 2026</time></span></li>
-    <li class="tl-item bold"><span class="dot"></span><span class="tl-text">Projet GL <time>Dec 2025 - Jan 2026</time></span></li>
+    <li class="tl-item bold accent-gl"><a href="#projet-gl"><span class="dot"></span><span class="tl-text">Projet GL <time>Dec 2025 - Jan 2026</time></span></a></li>
     <li class="tl-item"><span class="dot"></span><span class="tl-text">Data Base Project <time>Nov 2025</time></span></li>
     <li class="tl-item accent-boids"><a href="#boids"><span class="dot"></span><span class="tl-text">Object-Oriented Programming - Boids <time>Nov 2025</time></span></a></li>
     <li class="tl-item"><span class="dot"></span><span class="tl-text">Operating Systems and Concurrent Programming <time>Sep-Nov 2025</time></span></li>
@@ -126,6 +126,41 @@
       <figure class="media">
         <img class="zoomable" src="assets/images/graphic3d-poster.png" alt="Poster summarizing the planar reflection project">
         <figcaption>Project poster</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="project accent-gl" id="projet-gl">
+    <h2>Projet Software Engineering</h2>
+    <p class="meta">December 2025 - January 2026 <span>- team of 5 - 5 weeks</span></p>
+    <div class="stack">
+      <span>Java</span><span>Maven</span><span>ANTLR</span>
+    </div>
+
+    <p>The objective of this big project was to write a compiler in Java for the Deca language (a small language similar to Java). We needed to adopt a quality approach, with the goal of producing "zero-defect" code, by developing a test suite capable of evaluating the compiler's conformity to the specification provided in the 231 pages documentation. This project could be decomposed in 3 major steps, that we would work on incrementally. Firstly we tried to make a simple test printing "Hello world" function, then we added all the necessary steps to make all non-class programs work, and finally we achieved to realize class-programs operational. Here are the 3 steps:</p>
+
+    <ul>
+      <li><strong>Step A - Lexical and syntactic analysis:</strong> implementation of a parser for Deca that constructs the program's primitive abstract syntax tree;</li>
+      <li><strong>Step B - Contextual checks:</strong> on the one hand, verification of the contextual syntax of Deca and, on the other, enrichment of the abstract tree and adding of contextual information to it;</li>
+      <li><strong>Step C - Code generation:</strong> production of a sequence of abstract machine instructions corresponding to the tree of a contextually correct Deca program.</li>
+    </ul>
+
+    <p>The compiler is the main program that invokes stages A, B, and C on the source programs. It can be called with different arguments, to limit the running to a certain step, or to limit the number of registers available for step C for example.</p>
+
+    <p>In addition to this work, we had to provide a huge battery of tests to cover the largest-scale of cases possible (we made a total of 569 tests), and to implement an extension. The goal of our extension was to generate Java bytecode, starting from .deca files. Java bytecode corresponds to .class files. A .class file represents the compiled form of a .java file. The task for this extension, therefore, was to create these .class files from .deca files (treated as .java files) using bytecode manipulation libraries and the <code>decac</code> command, while considering only the functions and methods defined by the Deca language.</p>
+
+    <div class="media-stack">
+      <figure class="media">
+        <video controls src="assets/videos/gl-wordle.mp4"></video>
+        <figcaption>Step A - the initial "Hello world" test</figcaption>
+      </figure>
+      <figure class="media">
+        <video controls src="assets/videos/gl-class.mp4"></video>
+        <figcaption>Class-programs running correctly, the final step</figcaption>
+      </figure>
+      <figure class="media">
+        <video controls src="assets/videos/gl-extension.mp4"></video>
+        <figcaption>The bytecode-generation extension in action</figcaption>
       </figure>
     </div>
   </section>

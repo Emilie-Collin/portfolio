@@ -10,6 +10,7 @@
   --c-acol: #6C4AB6;
   --c-3d: #D69A2D;
   --c-internship: #2274A5;
+  --c-gl: #B5446E;
 
   --serif: "Fraunces", Georgia, "Times New Roman", serif;
   --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
@@ -92,6 +93,7 @@ nav.timeline ol{
 .tl-item.accent-acol .dot{ background: var(--c-acol); }
 .tl-item.accent-3d .dot{ background: var(--c-3d); }
 .tl-item.accent-internship .dot{ background: var(--c-internship); }
+.tl-item.accent-gl .dot{ background: var(--c-gl); }
 
 .tl-item time{
   font-size: 0.85em;
@@ -114,6 +116,7 @@ main{ padding: 16px 0 80px; }
 .project.accent-acol{ border-color: var(--c-acol); }
 .project.accent-3d{ border-color: var(--c-3d); }
 .project.accent-internship{ border-color: var(--c-internship); }
+.project.accent-gl{ border-color: var(--c-gl); }
 
 .project h2{
   font-family: var(--serif);
@@ -159,6 +162,7 @@ main{ padding: 16px 0 80px; }
 .accent-acol .stack span{ border-color: var(--c-acol); color: var(--c-acol); }
 .accent-3d .stack span{ border-color: var(--c-3d); color: var(--c-3d); }
 .accent-internship .stack span{ border-color: var(--c-internship); color: var(--c-internship); }
+.accent-gl .stack span{ border-color: var(--c-gl); color: var(--c-gl); }
 
 .project p{
   max-width: 68ch;
