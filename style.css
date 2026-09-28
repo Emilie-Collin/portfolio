@@ -40,7 +40,9 @@ header.hero{ padding: 88px 0 56px; }
 
 header.hero h1{
   font-family: var(--serif);
-  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  line-height: 1.15;
+  overflow-wrap: break-word;
   font-weight: 600;
   margin: 0 0 16px;
 }
